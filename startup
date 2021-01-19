@@ -14,7 +14,7 @@ local activateOnCharged = 1
 
 -- please leave things untouched from here on
 -- this lib/f file is found here: https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/lib/f
-if !fs.exists("lib/f")
+if fs.exists("lib/f") == false
   wget https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/lib/f lib/f
 end
 os.loadAPI("lib/f")
