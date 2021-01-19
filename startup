@@ -16,7 +16,7 @@ local activateOnCharged = 1
 -- this lib/f file is found here: https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/lib/f
 local libURL = "https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/lib/f"
 if fs.exists("lib/f") == false then
-  fs.mkdir("lib")
+  fs.makedir("lib")
   local lib = http.get(libURL)
   local libFile = lib.readAll()
   local file1 = fs.open("lib/f", "w")
