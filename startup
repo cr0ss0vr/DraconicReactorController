@@ -38,7 +38,7 @@ local curOutputGate = 222000
 local rebooted = 0
 
 --version check
-if latestVersion != version
+if latestVersion != version then
   fs.delete(startup)
   local startupURL = "https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/startup"
   local startup = http.get(startupURL)
