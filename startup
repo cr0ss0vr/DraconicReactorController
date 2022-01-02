@@ -25,7 +25,11 @@ if fs.exists("lib/f") == false then
 end
 os.loadAPI("lib/f")
 
-local version = "0.25"
+local versionURL = "https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/version"
+local v = http.get(versionURL)
+local latestVersion = v.readAll()
+
+local version = "0.26"
 -- toggleable via the monitor, use our algorithm to achieve our target field strength or let the user tweak it
 local autoInputGate = 1
 local autoOutputGate = 0
@@ -50,7 +54,7 @@ local emergencyCharge = false
 local emergencyTemp = false
 
 monitor = f.periphSearch("monitor")
-inputfluxgate = f.periphSearch("flux_gate")
+inputfluxgate = f.periphSearch("flow_gate")
 fluxgate = peripheral.wrap(fluxgateSide)
 reactor = peripheral.wrap(reactorSide)
 
