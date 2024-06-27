@@ -29,7 +29,7 @@ local versionURL = "https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorCo
 local v = http.get(versionURL)
 local latestVersion = v.readAll()
 
-local version = "0.27"
+local version = "0.28"
 -- toggleable via the monitor, use our algorithm to achieve our target field strength or let the user tweak it
 local autoInputGate = 1
 local autoOutputGate = 0
@@ -39,7 +39,7 @@ local rebooted = 0
 
 --version check
 if latestVersion ~= version then
-  fs.delete(startup)
+  fs.delete("/startup")
   local startupURL = "https://raw.githubusercontent.com/cr0ss0vr/DraconicReactorController/main/startup"
   local startup = http.get(startupURL)
   local startupFile = lib.readAll()
